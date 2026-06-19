@@ -465,7 +465,7 @@ async function enviarReset() {
   document.getElementById('btnResetTxt').style.display  = 'none';
 
   const { error } = await sb.auth.resetPasswordForEmail(email, {
-    redirectTo: 'https://orizonrs.github.io/Consultoria/contratos/reset-senha.html'
+    redirectTo: 'https://orizonr.github.io/Consultoria/contratos/reset-senha.html'
   });
 
   document.getElementById('spinnerReset').style.display = 'none';
