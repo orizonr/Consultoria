@@ -1,6 +1,6 @@
 # ═══════════════════════════════════════════
 # robots.txt — Orizon RH
-# https://orizonrs.github.io/Consultoria/
+# https://orizonr.github.io/Consultoria/
 # ═══════════════════════════════════════════
 
 # Todos os bots: permitir o site, bloquear páginas legais/sistema
@@ -11,7 +11,7 @@ Disallow: /Consultoria/site/indexcookies.html
 Disallow: /Consultoria/site/privacidade.html
 
 # Sitemap
-Sitemap: https://orizonrs.github.io/Consultoria/sitemap.xml
+Sitemap: https://orizonr.github.io/Consultoria/sitemap.xml
 
 # Crawl-delay para bots respeitosos (exceto Googlebot, que ignora essa diretiva)
 Crawl-delay: 1
