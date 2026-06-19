@@ -8,13 +8,13 @@
 <meta name="description" content="A Orizon divulga suas vagas e oportunidades nos canais certos — grupos de WhatsApp, redes sociais e plataformas de emprego — para atrair candidatos qualificados com rapidez."/>
 <meta name="keywords" content="divulgação de vagas rs, publicar vaga whatsapp, divulgar emprego guaíba, captação de candidatos rs, orizon divulgação"/>
 <meta name="robots" content="index, follow"/>
-<meta name="author" content="Orizon — orizonrs.com"/>
-<link rel="canonical" href="https://orizonrs.github.io/Consultoria/servico-divulgacao.html"/>
+<meta name="author" content="Orizon — orizonr.com"/>
+<link rel="canonical" href="https://orizonr.github.io/Consultoria/servico-divulgacao.html"/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://orizonrs.github.io/Consultoria/servico-divulgacao.html"/>
+<meta property="og:url" content="https://orizonr.github.io/Consultoria/servico-divulgacao.html"/>
 <meta property="og:title" content="Divulgação de Vagas & Oportunidades | Orizon RS"/>
 <meta property="og:description" content="Divulgamos suas vagas nos canais certos — grupos de WhatsApp, redes sociais e plataformas — para você receber candidatos qualificados com rapidez."/>
-<meta property="og:image" content="https://orizonrs.github.io/Consultoria/imagens/og-image.png"/>
+<meta property="og:image" content="https://orizonr.github.io/Consultoria/imagens/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:locale" content="pt_BR"/>
@@ -22,7 +22,7 @@
 <meta name="geo.region" content="BR-RS"/>
 <meta name="geo.placename" content="Guaíba, Rio Grande do Sul, Brasil"/>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"Divulgação de Vagas — Orizon","description":"Divulgação de vagas e oportunidades em grupos de WhatsApp, redes sociais e plataformas de emprego para atrair candidatos qualificados.","provider":{"@type":"Organization","name":"Orizon","url":"https://orizonrs.github.io/Consultoria/"},"areaServed":{"@type":"State","name":"Rio Grande do Sul","addressCountry":"BR"},"url":"https://orizonrs.github.io/Consultoria/servico-divulgacao.html"}
+{"@context":"https://schema.org","@type":"Service","name":"Divulgação de Vagas — Orizon","description":"Divulgação de vagas e oportunidades em grupos de WhatsApp, redes sociais e plataformas de emprego para atrair candidatos qualificados.","provider":{"@type":"Organization","name":"Orizon","url":"https://orizonr.github.io/Consultoria/"},"areaServed":{"@type":"State","name":"Rio Grande do Sul","addressCountry":"BR"},"url":"https://orizonr.github.io/Consultoria/servico-divulgacao.html"}
 </script>
 <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon-32x32.png"/>
 <link rel="shortcut icon" href="imagens/icone.png" type="image/png"/>
@@ -358,7 +358,7 @@ async function gerarPDF(){
      ['ESCRITORIOS & ADMINISTRACAO','Assistentes, recepcionistas, financeiro, atendimento ao cliente e cargos administrativos.']
     ].forEach(([l,v])=>row1(l,v));
     const tp=doc.internal.getNumberOfPages();
-    for(let p=1;p<=tp;p++){doc.setPage(p);rect(0,287,W,10,...INK);ff('helvetica',6.5);fc(160,165,180);doc.text('Orizon Consultoria · adm@orizonrs.com',M,293);doc.text('Pag. '+p+'/'+tp,W-M,293,'right');fc(...GOLD);doc.text('MATERIAL INFORMATIVO',W/2,293,'center');}
+    for(let p=1;p<=tp;p++){doc.setPage(p);rect(0,287,W,10,...INK);ff('helvetica',6.5);fc(160,165,180);doc.text('Orizon Consultoria · adm@orizonr.com',M,293);doc.text('Pag. '+p+'/'+tp,W-M,293,'right');fc(...GOLD);doc.text('MATERIAL INFORMATIVO',W/2,293,'center');}
     doc.save('Orizon_Servico_Divulgacao.pdf');toast('✅ PDF gerado!','ok');
   }catch(e){toast('Erro: '+e.message,'err');}
 }

@@ -8,18 +8,18 @@
 <meta name="description" content="A Orizon cria sites profissionais personalizados com templates pré-prontos, logo, design e identidade visual do cliente. Sites responsivos, rápidos e com SEO para empresas do RS."/>
 <meta name="keywords" content="criação de sites rs, site profissional guaíba, desenvolvimento web rs, site empresa rio grande do sul, logo design rs, orizon sites"/>
 <meta name="robots" content="index, follow"/>
-<meta name="author" content="Orizon — orizonrs.com"/>
-<link rel="canonical" href="https://orizonrs.github.io/Consultoria/servico-site.html"/>
+<meta name="author" content="Orizon — orizonr.com"/>
+<link rel="canonical" href="https://orizonr.github.io/Consultoria/servico-site.html"/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://orizonrs.github.io/Consultoria/servico-site.html"/>
+<meta property="og:url" content="https://orizonr.github.io/Consultoria/servico-site.html"/>
 <meta property="og:title" content="Criação de Sites Profissionais | Orizon RS"/>
 <meta property="og:description" content="Sites profissionais com design personalizado, logo, SEO e responsividade. Templates pré-prontos adaptados à sua identidade."/>
-<meta property="og:image" content="https://orizonrs.github.io/Consultoria/imagens/og-image.png"/>
+<meta property="og:image" content="https://orizonr.github.io/Consultoria/imagens/og-image.png"/>
 <meta property="og:locale" content="pt_BR"/>
 <meta property="og:site_name" content="Orizon"/>
 <meta name="geo.region" content="BR-RS"/>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"Criacao de Sites — Orizon","description":"Desenvolvimento de sites profissionais com design personalizado, logo, SEO e responsividade para empresas do RS.","provider":{"@type":"Organization","name":"Orizon","url":"https://orizonrs.github.io/Consultoria/"},"areaServed":{"@type":"State","name":"Rio Grande do Sul","addressCountry":"BR"},"url":"https://orizonrs.github.io/Consultoria/servico-site.html"}
+{"@context":"https://schema.org","@type":"Service","name":"Criacao de Sites — Orizon","description":"Desenvolvimento de sites profissionais com design personalizado, logo, SEO e responsividade para empresas do RS.","provider":{"@type":"Organization","name":"Orizon","url":"https://orizonr.github.io/Consultoria/"},"areaServed":{"@type":"State","name":"Rio Grande do Sul","addressCountry":"BR"},"url":"https://orizonr.github.io/Consultoria/servico-site.html"}
 </script>
 <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon-32x32.png"/>
 <link rel="shortcut icon" href="imagens/icone.png" type="image/png"/>
@@ -337,7 +337,7 @@ async function gerarPDF(){
      'Integracao com redes sociais e WhatsApp',
     ].forEach((v,i)=>{checkY(7);ff('helvetica',8.5,'bold');fc(...INK);doc.text((i+1)+'. '+v,M+2,y);y+=6;});
     const tp=doc.internal.getNumberOfPages();
-    for(let p=1;p<=tp;p++){doc.setPage(p);rect(0,287,W,10,...INK);ff('helvetica',6.5);fc(160,165,180);doc.text('Orizon Consultoria · adm@orizonrs.com',M,293);doc.text('Pag. '+p+'/'+tp,W-M,293,'right');fc(...GOLD);doc.text('MATERIAL INFORMATIVO',W/2,293,'center');}
+    for(let p=1;p<=tp;p++){doc.setPage(p);rect(0,287,W,10,...INK);ff('helvetica',6.5);fc(160,165,180);doc.text('Orizon Consultoria · adm@orizonr.com',M,293);doc.text('Pag. '+p+'/'+tp,W-M,293,'right');fc(...GOLD);doc.text('MATERIAL INFORMATIVO',W/2,293,'center');}
     doc.save('Orizon_Servico_Sites.pdf');toast('✅ PDF gerado!','ok');
   }catch(e){toast('Erro: '+e.message,'err');}
 }

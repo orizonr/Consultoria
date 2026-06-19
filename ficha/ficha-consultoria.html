@@ -9,14 +9,14 @@
 <meta name="description" content="Consultoria especializada em Recursos Humanos e Administração pela Orizon. Estruturação de RH, políticas internas, onboarding, avaliação de desempenho e processos administrativos no RS."/>
 <meta name="keywords" content="consultoria RH rio grande do sul, gestão de pessoas RS, estruturação departamento RH, onboarding empresas, avaliação desempenho RH, consultoria administrativa, orizon consultoria RH"/>
 <meta name="robots" content="index, follow"/>
-<meta name="author" content="Orizon — orizonrs.com"/>
-<link rel="canonical" href="https://orizonrs.com/ficha-consultoria.html"/>
+<meta name="author" content="Orizon — orizonr.com"/>
+<link rel="canonical" href="https://orizonr.com/ficha-consultoria.html"/>
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://orizonrs.com/ficha-consultoria.html"/>
+<meta property="og:url" content="https://orizonr.com/ficha-consultoria.html"/>
 <meta property="og:title" content="Consultoria RH & Administrativa | Orizon RS"/>
 <meta property="og:description" content="Estruture seu RH com especialistas: políticas internas, onboarding, avaliação de desempenho e processos administrativos."/>
-<meta property="og:image" content="https://orizonrs.com/imagens/og-image.png"/>
+<meta property="og:image" content="https://orizonr.com/imagens/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:locale" content="pt_BR"/>
@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Consultoria RH & Administrativa | Orizon RS"/>
 <meta name="twitter:description" content="Estruture seu RH com especialistas: políticas internas, onboarding, avaliação de desempenho e processos administrativos."/>
-<meta name="twitter:image" content="https://orizonrs.com/imagens/og-image.png"/>
+<meta name="twitter:image" content="https://orizonr.com/imagens/og-image.png"/>
 <!-- Geo / Local SEO -->
 <meta name="geo.region" content="BR-RS"/>
 <meta name="geo.placename" content="Rio Grande do Sul, Brasil"/>
@@ -45,9 +45,9 @@
   "@type":"Service",
   "name":"Consultoria RH & Administrativa — Orizon",
   "description":"Consultoria especializada em Recursos Humanos e Administração, incluindo estruturação de departamento, onboarding e avaliação de desempenho.",
-  "provider":{"@type":"Organization","name":"Orizon","url":"https://orizonrs.com"},
+  "provider":{"@type":"Organization","name":"Orizon","url":"https://orizonr.com"},
   "areaServed":{"@type":"State","name":"Rio Grande do Sul","addressCountry":"BR"},
-  "url":"https://orizonrs.com/ficha-consultoria.html"
+  "url":"https://orizonr.com/ficha-consultoria.html"
 }
 </script>
 
@@ -55,7 +55,7 @@
 {
   "@context":"https://schema.org",
   "@type":"BreadcrumbList",
-  "itemListElement":[{"@type":"ListItem","position":1,"name":"Orizon","item":"https://orizonrs.com/"},{"@type":"ListItem","position":2,"name":"Consultoria RH","item":"https://orizonrs.com/ficha-consultoria.html"}]
+  "itemListElement":[{"@type":"ListItem","position":1,"name":"Orizon","item":"https://orizonr.com/"},{"@type":"ListItem","position":2,"name":"Consultoria RH","item":"https://orizonr.com/ficha-consultoria.html"}]
 }
 </script>
 <!-- ═══════ /SEO ORIZON ═══════ -->
@@ -375,7 +375,7 @@ function gerarPDF(btn_el){
   rect(0,0,W,30,...INK);
   ff('helvetica',22,'bold');fc(...WHITE);doc.text('ORIZON',M,16);
   ff('helvetica',8);fc(...GOLD);doc.text(document.querySelector('.hero-eyebrow')?.textContent||'Ficha de Serviço',M,22);
-  ff('helvetica',9);fc(180,185,200);doc.text('adm@orizonrs.com',W-M,22,'right');
+  ff('helvetica',9);fc(180,185,200);doc.text('adm@orizonr.com',W-M,22,'right');
   y=40;
   ff('helvetica',16,'bold');fc(...INK);doc.text(document.querySelector('.hero-title')?.innerText||'Ficha',M,y);y+=10;
   doc.setLineWidth(0.4);doc.setDrawColor(...GOLD);doc.line(M,y,W-M,y);y+=8;
@@ -397,7 +397,7 @@ function gerarPDF(btn_el){
     });
   });
   const pg=doc.internal.getNumberOfPages();
-  for(let p=1;p<=pg;p++){doc.setPage(p);rect(0,287,W,10,...INK);ff('helvetica',6.5);fc(160,165,180);doc.text('Orizon · adm@orizonrs.com',M,293);doc.text('Pág.'+p+'/'+pg,W-M,293,'right');fc(...GOLD);doc.text('CONFIDENCIAL',W/2,293,'center');}
+  for(let p=1;p<=pg;p++){doc.setPage(p);rect(0,287,W,10,...INK);ff('helvetica',6.5);fc(160,165,180);doc.text('Orizon · adm@orizonr.com',M,293);doc.text('Pág.'+p+'/'+pg,W-M,293,'right');fc(...GOLD);doc.text('CONFIDENCIAL',W/2,293,'center');}
   const nome=document.title.replace(/[^a-zA-Z0-9_]/g,'_');
   doc.save(nome+'.pdf');
   toast('✅ PDF gerado!','ok');

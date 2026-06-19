@@ -8,13 +8,13 @@
 <meta name="description" content="A Orizon cria e gerencia perfis nas redes sociais, produz calendário de conteúdo, aplica SEO on-page e desenvolve estratégias de engajamento orgânico para empresas do Rio Grande do Sul."/>
 <meta name="keywords" content="gestão redes sociais rs, marketing digital rio grande do sul, seo on-page empresa, calendário de conteúdo, instagram empresa rs, engajamento orgânico, orizon marketing digital"/>
 <meta name="robots" content="index, follow"/>
-<meta name="author" content="Orizon — orizonrs.com"/>
-<link rel="canonical" href="https://orizonrs.github.io/Consultoria/servico-social.html"/>
+<meta name="author" content="Orizon — orizonr.com"/>
+<link rel="canonical" href="https://orizonr.github.io/Consultoria/servico-social.html"/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://orizonrs.github.io/Consultoria/servico-social.html"/>
+<meta property="og:url" content="https://orizonr.github.io/Consultoria/servico-social.html"/>
 <meta property="og:title" content="Gestão de Redes Sociais & SEO | Orizon RS"/>
 <meta property="og:description" content="Criação e gestão de perfis, calendário de conteúdo, SEO on-page e estratégias de engajamento orgânico. Sua empresa presente onde o cliente está."/>
-<meta property="og:image" content="https://orizonrs.github.io/Consultoria/imagens/og-image.png"/>
+<meta property="og:image" content="https://orizonr.github.io/Consultoria/imagens/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:locale" content="pt_BR"/>
@@ -22,7 +22,7 @@
 <meta name="geo.region" content="BR-RS"/>
 <meta name="geo.placename" content="Guaíba, Rio Grande do Sul, Brasil"/>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"Gestão de Redes Sociais & SEO — Orizon","description":"Criação e gestão de perfis nas redes sociais, calendário de conteúdo, SEO on-page e estratégias de engajamento orgânico para empresas.","provider":{"@type":"Organization","name":"Orizon","url":"https://orizonrs.github.io/Consultoria/"},"areaServed":{"@type":"State","name":"Rio Grande do Sul","addressCountry":"BR"},"url":"https://orizonrs.github.io/Consultoria/servico-social.html"}
+{"@context":"https://schema.org","@type":"Service","name":"Gestão de Redes Sociais & SEO — Orizon","description":"Criação e gestão de perfis nas redes sociais, calendário de conteúdo, SEO on-page e estratégias de engajamento orgânico para empresas.","provider":{"@type":"Organization","name":"Orizon","url":"https://orizonr.github.io/Consultoria/"},"areaServed":{"@type":"State","name":"Rio Grande do Sul","addressCountry":"BR"},"url":"https://orizonr.github.io/Consultoria/servico-social.html"}
 </script>
 <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon-32x32.png"/>
 <link rel="shortcut icon" href="imagens/icone.png" type="image/png"/>
@@ -390,7 +390,7 @@ async function gerarPDF(){
      ['AUDITORIA DE SEO','Revisao periodica das paginas do site, atualizacao de palavras-chave e otimizacao continua.']
     ].forEach(([l,v])=>row1(l,v));
     const tp=doc.internal.getNumberOfPages();
-    for(let p=1;p<=tp;p++){doc.setPage(p);rect(0,287,W,10,...INK);ff('helvetica',6.5);fc(160,165,180);doc.text('Orizon Consultoria · adm@orizonrs.com',M,293);doc.text('Pag. '+p+'/'+tp,W-M,293,'right');fc(...GOLD);doc.text('MATERIAL INFORMATIVO',W/2,293,'center');}
+    for(let p=1;p<=tp;p++){doc.setPage(p);rect(0,287,W,10,...INK);ff('helvetica',6.5);fc(160,165,180);doc.text('Orizon Consultoria · adm@orizonr.com',M,293);doc.text('Pag. '+p+'/'+tp,W-M,293,'right');fc(...GOLD);doc.text('MATERIAL INFORMATIVO',W/2,293,'center');}
     doc.save('Orizon_Servico_RedesSociais_SEO.pdf');toast('✅ PDF gerado!','ok');
   }catch(e){toast('Erro: '+e.message,'err');}
 }

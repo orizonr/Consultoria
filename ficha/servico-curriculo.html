@@ -8,18 +8,18 @@
 <meta name="description" content="A Orizon cria currículos compatíveis com sistemas ATS, otimizados para LinkedIn, em 1 ou 2 páginas, para CLT, estágio, aprendiz, PCD e mais. Encontre seu próximo emprego com o currículo certo."/>
 <meta name="keywords" content="criação currículo profissional rs, currículo ats guaíba, linkedin currículo otimizado, currículo estagio aprendiz, currículo pcd rs, orizon currículo"/>
 <meta name="robots" content="index, follow"/>
-<meta name="author" content="Orizon — orizonrs.com"/>
-<link rel="canonical" href="https://orizonrs.github.io/Consultoria/servico-curriculo.html"/>
+<meta name="author" content="Orizon — orizonr.com"/>
+<link rel="canonical" href="https://orizonr.github.io/Consultoria/servico-curriculo.html"/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://orizonrs.github.io/Consultoria/servico-curriculo.html"/>
+<meta property="og:url" content="https://orizonr.github.io/Consultoria/servico-curriculo.html"/>
 <meta property="og:title" content="Criação de Currículos Profissionais | Orizon RS"/>
 <meta property="og:description" content="Currículos ATS-friendly, LinkedIn, 1 ou 2 páginas, para todos os perfis — CLT, estágio, aprendiz, PCD. Seja encontrado pelo recrutador certo."/>
-<meta property="og:image" content="https://orizonrs.github.io/Consultoria/imagens/og-image.png"/>
+<meta property="og:image" content="https://orizonr.github.io/Consultoria/imagens/og-image.png"/>
 <meta property="og:locale" content="pt_BR"/>
 <meta property="og:site_name" content="Orizon"/>
 <meta name="geo.region" content="BR-RS"/>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"Criacao de Curriculos — Orizon","description":"Criacao de curriculos profissionais compativeis com ATS, otimizados para LinkedIn, para todos os perfis e niveis.","provider":{"@type":"Organization","name":"Orizon","url":"https://orizonrs.github.io/Consultoria/"},"areaServed":{"@type":"State","name":"Rio Grande do Sul","addressCountry":"BR"},"url":"https://orizonrs.github.io/Consultoria/servico-curriculo.html"}
+{"@context":"https://schema.org","@type":"Service","name":"Criacao de Curriculos — Orizon","description":"Criacao de curriculos profissionais compativeis com ATS, otimizados para LinkedIn, para todos os perfis e niveis.","provider":{"@type":"Organization","name":"Orizon","url":"https://orizonr.github.io/Consultoria/"},"areaServed":{"@type":"State","name":"Rio Grande do Sul","addressCountry":"BR"},"url":"https://orizonr.github.io/Consultoria/servico-curriculo.html"}
 </script>
 <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon-32x32.png"/>
 <link rel="shortcut icon" href="imagens/icone.png" type="image/png"/>
@@ -373,7 +373,7 @@ async function gerarPDF(){
      ['5. ENTREGA DOS ARQUIVOS','PDF, Word e versao ATS entregues pelo WhatsApp ou e-mail.'],
     ].forEach(([l,v])=>row1(l,v));
     const tp=doc.internal.getNumberOfPages();
-    for(let p=1;p<=tp;p++){doc.setPage(p);rect(0,287,W,10,...INK);ff('helvetica',6.5);fc(160,165,180);doc.text('Orizon Consultoria · adm@orizonrs.com',M,293);doc.text('Pag. '+p+'/'+tp,W-M,293,'right');fc(...GOLD);doc.text('MATERIAL INFORMATIVO',W/2,293,'center');}
+    for(let p=1;p<=tp;p++){doc.setPage(p);rect(0,287,W,10,...INK);ff('helvetica',6.5);fc(160,165,180);doc.text('Orizon Consultoria · adm@orizonr.com',M,293);doc.text('Pag. '+p+'/'+tp,W-M,293,'right');fc(...GOLD);doc.text('MATERIAL INFORMATIVO',W/2,293,'center');}
     doc.save('Orizon_Servico_Curriculos.pdf');toast('✅ PDF gerado!','ok');
   }catch(e){toast('Erro: '+e.message,'err');}
 }
