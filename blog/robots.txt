@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://orizonrs.github.io/Consultoria/sitemap.xml
+Sitemap: https://orizonr.github.io/Consultoria/sitemap.xml
