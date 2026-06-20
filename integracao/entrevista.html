@@ -2622,13 +2622,13 @@ async function salvarFitCurriculoSupabase(res) {
 
   // Monta payload apenas com os campos do currículo (etapa 0)
   const payload = {
-    score_curriculo: res.score_curriculo ?? null,
+    score_curriculo: numOrNull(res.score_curriculo),
     nivel_curriculo: res.nivel_curriculo || null,
     resumo_curriculo: res.recomendacao_curriculo || res.narrativa_candidato || null,
     // Mapeia notas_dimensoes para os campos do banco
-    nota_exp_curriculo:  res.notas_dimensoes?.progressao_trajetoria  ?? null,
-    nota_form_curriculo: res.notas_dimensoes?.alinhamento_vaga        ?? null,
-    nota_tec_curriculo:  res.notas_dimensoes?.profundidade_especificidade ?? null,
+    nota_exp_curriculo:  numOrNull(res.notas_dimensoes?.progressao_trajetoria),
+    nota_form_curriculo: numOrNull(res.notas_dimensoes?.alinhamento_vaga),
+    nota_tec_curriculo:  numOrNull(res.notas_dimensoes?.profundidade_especificidade),
     atualizado_em: new Date().toISOString(),
   };
 
