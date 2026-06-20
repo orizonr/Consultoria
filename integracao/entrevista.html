@@ -6145,17 +6145,18 @@ async function enviarAnalisseECandidatura() {
     window._lastFitScore = ia.fit_score || 0;
     window._lastFitNivel = ia.nivel || '';
 
-    // Salva no Supabase + envia email em background
-    window._entrevistaSalvarPromise = salvar(dados, ia).catch(e => console.warn('salvar:', e));
-
     toast('✅ Análise enviada! Redirecionando para candidatura...', 'ok');
   } catch(e) {
     console.warn('enviarAnalisseECandidatura erro análise:', e);
-    toast('⚠️ Análise falhou, seguindo para candidatura...', 'ok');
+    toast('⚠️ Análise com fallback, salvando e redirecionando...', 'ok');
+    // Garante ia mínimo para salvar mesmo com IA falhando
+    if (!dados.analise) dados.analise = { fit_score: null, nivel: null, resumo_candidato: 'Análise indisponível' };
   }
 
+  // Salva no Supabase FORA do try/catch da análise — garante que salva mesmo se IA falhar
+  window._entrevistaSalvarPromise = salvar(dados, dados.analise || {}).catch(e => console.warn('salvar:', e));
+
   // Espera o salvamento no Supabase terminar de verdade antes de sair da página
-  // (antes saía em 1.5s fixo e cancelava o PATCH/POST que ainda estava em andamento)
   try {
     await Promise.race([
       window._entrevistaSalvarPromise,
