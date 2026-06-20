@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<script src="../guard.js"></script>
 <script src="../supabase-config.js"></script>
 <meta charset="UTF-8"/>
   <!-- ═══ FAVICON ═══ -->
@@ -854,7 +853,7 @@ select.pi option{background:#1a1a1a;}
         <div class="psec">
           <div class="psec-title">⚡ Importar resultado por link</div>
           <p style="font-size:0.7rem;color:var(--muted);margin-bottom:0.6rem;line-height:1.55;">Cole o link do <em>entrevista-resultado.html</em> ou <em>disc-resultado.html</em>.</p>
-          <textarea class="pi ta" id="importUrl" placeholder="https://orizonrs.github.io/Consultoria/entrevista-resultado.html?nome=…" style="min-height:60px;"></textarea>
+          <textarea class="pi ta" id="importUrl" placeholder="https://orizonr.github.io/Consultoria/entrevista-resultado.html?nome=…" style="min-height:60px;"></textarea>
           <div style="display:flex;gap:0.5rem;margin-top:0.5rem;">
             <button onclick="importarUrl()" class="save-btn" style="flex:1;">⚡ Importar e Salvar</button>
             <button onclick="document.getElementById('importUrl').value='';" style="background:rgba(255,255,255,0.05);color:var(--muted);border:1px solid rgba(255,255,255,0.1);border-radius:9px;padding:0.6rem 0.9rem;font-family:inherit;font-size:0.78rem;cursor:pointer;">Limpar</button>
@@ -1536,7 +1535,7 @@ function candRow(h){
   const entFormUrl = `../entrevista.html?nome=${encodeURIComponent(h.nome||'')}&vaga=${encodeURIComponent(h.vaga||'')}&dom=${h.dom||'D'}&sec=${h.sec||'I'}&candidato_id=${encodeURIComponent(h.id||'')}`;
   const entResultUrl = h.url_resultado_fit || entFormUrl;
   const _temResultadoDisc = !!(h.dom||(h.pct_d&&parseFloat(h.pct_d)>0));
-  const _base = 'https://orizonrs.github.io/Consultoria/';
+  const _base = 'https://orizonr.github.io/Consultoria/';
   const _discUrl = _temResultadoDisc
     ? (h.url || (_base+'disc-resultado.html?nome='+encodeURIComponent(h.nome||'')+'&perfil='+(h.dom||'D')+'&sec='+(h.sec||'I')+'&d='+(h.pct_d||0)+'&i='+(h.pct_i||0)+'&s='+(h.pct_s||0)+'&c='+(h.pct_c||0)+'&vaga='+encodeURIComponent(h.vaga||'')))
     : (_base+'disc.html?nome='+encodeURIComponent(h.nome||'')+'&vaga='+encodeURIComponent(h.vaga||''));

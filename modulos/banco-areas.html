@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<script src="../guard.js"></script>
 <script src="../supabase-config.js"></script>
 <script src="../orizon-security.js"></script>
 <meta charset="UTF-8"/>
@@ -662,7 +661,7 @@ select.perfil-inp option{background:#1e1e1e;color:#f0f0f0;}
         <button onclick="var w=document.getElementById('paImportarWrap');w.style.display=w.style.display==='none'?'block':'none';" style="width:100%;background:rgba(52,152,219,0.06);color:#3498db;border:1px solid rgba(52,152,219,0.18);border-radius:8px;padding:0.4rem;font-family:inherit;font-size:0.72rem;font-weight:700;cursor:pointer;">⚡ Importar resultado por link (DISC ou Entrevista)</button>
         <div id="paImportarWrap" style="display:none;margin-top:0.65rem;">
           <div class="perfil-sec-title" style="color:#3498db;">⚡ Importar resultado por link</div>
-          <textarea id="paUrlImport" class="perfil-inp ta" placeholder="https://orizonrs.github.io/Consultoria/entrevista-resultado.html?nome=…" style="min-height:72px;"></textarea>
+          <textarea id="paUrlImport" class="perfil-inp ta" placeholder="https://orizonr.github.io/Consultoria/entrevista-resultado.html?nome=…" style="min-height:72px;"></textarea>
           <div class="import-preview" id="paImportPreview"></div>
           <div style="display:flex;gap:0.5rem;margin-top:0.6rem;">
             <button onclick="importarUrlArea()" class="perfil-save-btn" style="flex:1;">⚡ Importar e Salvar</button>
@@ -1809,7 +1808,7 @@ function abrirPerfilArea(id){
   document.getElementById('paScores').innerHTML = scoresHtml || '<p style="font-size:0.75rem;color:#555;">Nenhum score ainda.</p>';
 
   // Botões ação rápida
-  const _baseP = 'https://orizonrs.github.io/Consultoria/';
+  const _baseP = 'https://orizonr.github.io/Consultoria/';
   const numW = (h.tel_externo||'').replace(/\D/g,'');
   const waTxt = encodeURIComponent('Olá '+((h.nome||'').split(' ')[0])+'! Aqui é da Orizon. Tudo bem?');
   const _temDisc = !!(h.url||(h.pct_d&&parseFloat(h.pct_d)>0));
