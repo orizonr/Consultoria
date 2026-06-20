@@ -3092,17 +3092,15 @@ async function carregarKPIs(){
       if(mbe) mbe.textContent = assign.length;
     }
   }catch(e){}
-  // banco-areas — Supabase
+  // banco-areas — Supabase (total de áreas cadastradas, não vínculos)
   try{
-    const r4 = await fetch(`${SUPABASE_URL}/rest/v1/areas_assign?select=cand_id`,
-      {headers:{'apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY}});
-    const assignAreas = await r4.json();
-    if(Array.isArray(assignAreas)){
-      const ba = document.getElementById('badge-banco-areas');
-      if(ba) ba.textContent = assignAreas.length;
-      const mba = document.getElementById('mb-badge-banco-areas');
-      if(mba) mba.textContent = assignAreas.length;
-    }
+    const r4 = await fetch(`${SUPABASE_URL}/rest/v1/areas_secoes?select=id`,
+      {headers:{'apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY,'Prefer':'count=exact','Range':'0-0'}});
+    const totalAreas = parseInt((r4.headers.get('content-range')||'').split('/')[1]) || 0;
+    const ba = document.getElementById('badge-banco-areas');
+    if(ba) ba.textContent = totalAreas;
+    const mba = document.getElementById('mb-badge-banco-areas');
+    if(mba) mba.textContent = totalAreas;
   }catch(e){}
   // banco-cargos — Supabase (total de cargos cadastrados, não candidatos)
   try{
