@@ -1890,8 +1890,8 @@ async function buscarDiscCandidato(nome, email, vaga) {
 }
 
 // Supabase
-const SB  = 'https://zxivdljbpdpwijtporff.supabase.co';
-const KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4aXZkbGpicGRwd2lqdHBvcmZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE4OTEyNjEsImV4cCI6MjA5NzQ2NzI2MX0.hTbkdMCzdT-NjqpK7jVSykZ6ucdhucrLhISoC1_kDs0';
+const SB  = 'https://yunoxkembhskpnprffoi.supabase.co';
+const KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1bm94a2VtYmhza3BucHJmZm9pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5Nzg2MzksImV4cCI6MjA5NDU1NDYzOX0.WhkzrBCHThvJaMuLeo6oVPjrWvc_MvfCoyz9B90-Yms';
 
 // Estado global
 let conquistas = [];
@@ -5613,18 +5613,35 @@ async function salvar(dados, ia) {
 
     if (_existingId) {
       // Registro encontrado → atualiza com dados da entrevista (incluindo nova vaga)
-      await fetch(
+      const _r = await fetch(
         `${SB}/rest/v1/disc_historico?id=eq.${_existingId}`,
         { method: 'PATCH', headers: { ..._hdrs, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' }, body: JSON.stringify(payload) }
       );
+      if (!_r.ok) {
+        const _txt = await _r.text().catch(()=> '');
+        console.error('❌❌❌ ENTREVISTA NAO SALVOU (PATCH) — status', _r.status, '—', _txt);
+        try { localStorage.setItem('ultimo_erro_salvar_entrevista', JSON.stringify({ status:_r.status, body:_txt, ts:Date.now() })); } catch(e){}
+      } else {
+        console.log('✅✅✅ Entrevista salva no Supabase (PATCH id=' + _existingId + ')');
+      }
     } else {
       // Registro NÃO existe → cria candidato novo
-      await fetch(
+      const _r = await fetch(
         `${SB}/rest/v1/disc_historico`,
         { method: 'POST', headers: { ..._hdrs, 'Content-Type': 'application/json', 'Prefer': 'return=representation' }, body: JSON.stringify(payloadInsert) }
       );
+      if (!_r.ok) {
+        const _txt = await _r.text().catch(()=> '');
+        console.error('❌❌❌ ENTREVISTA NAO SALVOU (POST) — status', _r.status, '—', _txt);
+        try { localStorage.setItem('ultimo_erro_salvar_entrevista', JSON.stringify({ status:_r.status, body:_txt, ts:Date.now() })); } catch(e){}
+      } else {
+        console.log('✅✅✅ Entrevista salva no Supabase (POST novo registro)');
+      }
     }
-  } catch(e) { console.warn('Supabase entrevista erro:', e); }
+  } catch(e) {
+    console.error('❌❌❌ ENTREVISTA NAO SALVOU (exception):', e);
+    try { localStorage.setItem('ultimo_erro_salvar_entrevista', JSON.stringify({ status:'exception', body:String(e), ts:Date.now() })); } catch(_e){}
+  }
   try { localStorage.setItem(`entrevista_${NOME}_${VAGA}`, JSON.stringify({ ...dados, analise: ia, ts: Date.now() })); } catch(e) {}
 
   // ── Supabase é a fonte única de verdade — email removido ──
