@@ -2631,6 +2631,10 @@ async function salvarFitCurriculoSupabase(res) {
     nota_tec_curriculo:  numOrNull(res.notas_dimensoes?.profundidade_especificidade),
     atualizado_em: new Date().toISOString(),
   };
+  // ── BLINDAGEM FINAL: garante que nenhum campo numérico escape como string ──
+  ['score_curriculo','nota_exp_curriculo','nota_form_curriculo','nota_tec_curriculo'].forEach(col => {
+    if (col in payload) payload[col] = numOrNull(payload[col]);
+  });
 
   try {
     // Tenta PATCH no registro existente (por candidato_id, email ou nome+vaga)
@@ -5547,6 +5551,23 @@ async function salvar(dados, ia) {
     fit_score_ia:          numOrNull(ia.fit_score),
     metodo_calculo:        ia._meta?.model             || null,
   };
+
+  // ── BLINDAGEM FINAL: força todas as colunas numeric/integer do banco ──
+  // Mesmo que algum campo novo seja adicionado no futuro sem passar por numOrNull,
+  // esta lista garante que nenhuma string (ex: "Não respondido") chegue numa coluna numérica.
+  const _COLUNAS_NUMERICAS = [
+    'fit_score','fit_score_ia','score_curriculo','kw_score',
+    'score_experiencia','score_competencias','score_motivacao','score_disc',
+    'nota_comunicacao','nota_resiliencia','nota_equipe','nota_resultados',
+    'nota_proatividade','nota_adaptabilidade','score_entrevista',
+    'nota_trajetoria','nota_competencias_ent','nota_motivacao_ent',
+    'nota_exp_curriculo','nota_form_curriculo','nota_tec_curriculo',
+    'percentil_vaga','media_fit_vaga','total_candidatos_vaga'
+  ];
+  _COLUNAS_NUMERICAS.forEach(col => {
+    if (col in payload) payload[col] = numOrNull(payload[col]);
+  });
+
   // Inclui email no PATCH para atualizar registros vindos do DISC que ainda não tinham email
   // Normaliza para lowercase para garantir buscas futuras consistentes
   if (EMAIL) payload.email_externo = EMAIL.toLowerCase().trim();
